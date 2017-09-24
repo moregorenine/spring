@@ -8,7 +8,7 @@
 -->
 <html>
 <head>
-<title>Editorial by HTML5 UP</title>
+<title>moregore</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -28,8 +28,7 @@
 
 				<!-- Header -->
 				<header id="header">
-					<a href="index.html" class="logo"><strong>Editorial</strong> by
-						HTML5 UP</a>
+					<a href="index.html" class="logo"><strong>moregore</strong> by han.jinseok</a>
 					<ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span
 								class="label">Twitter</span></a></li>
