@@ -30,15 +30,15 @@
 				<header id="header">
 					<a href="index.html" class="logo"><strong>moregore</strong> by han.jinseok</a>
 					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span
-								class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span
+						<li><a href="https://twitter.com/w4springrain"
+							class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook" target="_blank"><span
 								class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-snapchat-ghost"><span
-								class="label">Snapchat</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span
-								class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-medium"><span
+						<li><a href="#" class="icon fa-snapchat-ghost"
+							target="_blank"><span class="label">Snapchat</span></a></li>
+						<li><a href="https://www.instagram.com/w4springrain/?hl=ko"
+							class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium" target="_blank"><span
 								class="label">Medium</span></a></li>
 					</ul>
 				</header>
