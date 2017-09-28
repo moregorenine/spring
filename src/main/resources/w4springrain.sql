@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS W4_USERS;
+DROP TABLE IF EXISTS W4_USER;
 
-CREATE TABLE W4_USERS (
+CREATE TABLE W4_USER (
 	userId		varchar(12) not null,
 	password	varchar(12)	not null,
 	name		varchar(20)	not null,
@@ -9,4 +9,4 @@ CREATE TABLE W4_USERS (
 	PRIMARY KEY(userId)
 );
 
-INSERT INTO W4_USERS VALUES('admin', 'gkswlstjr81', 'admin', 'w4springrain@gmail.com');
+INSERT INTO W4_USER VALUES('admin', 'gkswlstjr81', 'admin', 'w4springrain@gmail.com');

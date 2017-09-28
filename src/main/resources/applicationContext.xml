@@ -13,4 +13,8 @@
 		p:username="${database.username}"
 		p:password="${database.password}"
 	/>
+	
+	<bean id="userDao" class="me.w4springrain.dao.user.UserDao"
+		p:dataSource-ref="dataSource"
+	/>
 </beans>

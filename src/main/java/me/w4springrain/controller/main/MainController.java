@@ -1,4 +1,4 @@
-package me.w4springrain.main.controller;
+package me.w4springrain.controller.main;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
