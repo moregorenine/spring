@@ -9,10 +9,10 @@ public class User {
 	public User() {
 	}
 	public User(String userId, String password, String name, String email) {
-		this.userId = userId;
-		this.password = password;
-		this.name = name;
-		this.email = email;
+		this.setUserId(userId);
+		this.setPassword(password);
+		this.setName(name);
+		this.setEmail(email);
 	}
 	public String getUserId() {
 		return userId;
