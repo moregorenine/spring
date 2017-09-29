@@ -21,6 +21,11 @@ public class UserDao extends JdbcDaoSupport {
 		DatabasePopulatorUtils.execute(populator, getDataSource());
 	}
 	
+	/**
+	 * W4_USER 조회
+	 * @param userId
+	 * @return
+	 */
 	public User findById(String userId) {
 		String sql = "select * from W4_USER where userId = ?";
 		RowMapper<User> rowMapper = new RowMapper<User>() {
@@ -30,5 +35,15 @@ public class UserDao extends JdbcDaoSupport {
 			}
 		};
 		return getJdbcTemplate().queryForObject(sql, rowMapper, userId);
+	}
+
+	/**
+	 * W4_USER 생성
+	 * @param user
+	 * @return
+	 */
+	public int create(User user) {
+		String sql = "insert into W4_USER values(?, ?, ?, ?)";
+		return getJdbcTemplate().update(sql, user.getUserId(), user.getPassword(), user.getName(), user.getEmail());
 	}
 }
