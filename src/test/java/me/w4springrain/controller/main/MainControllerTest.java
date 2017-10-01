@@ -20,7 +20,7 @@ public class MainControllerTest {
 	public void home() {
 		
 		assertNotNull(mainController);
-		assertThat(mainController.home(), is("/main"));
+		assertThat(mainController.home(), is("/main/index"));
 	}
 
 }

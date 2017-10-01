@@ -19,11 +19,6 @@ public class UserController {
 	@Autowired
 	private UserDao userDao;
 	
-	@RequestMapping("form")
-	public String form() {
-		return "user/form";
-	}
-	
 	@RequestMapping(value="/user", method=RequestMethod.POST)
 	public String create(User user) {
 		log.debug("User : {}", user);

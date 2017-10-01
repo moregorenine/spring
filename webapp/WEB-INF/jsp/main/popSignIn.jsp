@@ -1,18 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<script>
-$('#btnSignUp').click(function() {
-	var $href = $(this).attr('href');
-	layer_popup($href);
-});
-
-$('#btnClose').click(function() {
-	var $href = $(this).attr('href');
-	layer_popup($href);
-});
-</script>
-
 <div class="dim-layer">
 	<div class="dimBg"></div>
 	<div id="popSignIn" class="pop-layer">
@@ -21,9 +9,6 @@ $('#btnClose').click(function() {
 			<!--content //-->
 			<h2>sign up</h2>
 			<div class="row uniform">
-				<div class="12u$">
-					<input type="text" name="name" value="" class="small" placeholder="Nic Name" />
-				</div>
 				<div class="12u$">
 					<input type="email" name="email" value="" placeholder="Email" />
 				</div>

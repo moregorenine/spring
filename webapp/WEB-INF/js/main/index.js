@@ -3,6 +3,9 @@ $('#hdSignUp').click(function() {
 	layer_popup($href);
 });
 
+$('#btnSignUp').click(function() {
+});
+
 function layer_popup(el) {
 
 	var $el = $(el); // 레이어의 id를 $el 변수에 저장

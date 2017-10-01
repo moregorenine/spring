@@ -18,11 +18,6 @@ public class UserControllerTest {
 	private UserController userController;
 	
 	@Test
-	public void testForm() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testCreate() {
 		User user = new User("userId", "password", "name", "email");
 		userController.create(user);	
