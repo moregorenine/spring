@@ -13,6 +13,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+<link rel="stylesheet" href="/assets/css/common.css" />
 <link rel="stylesheet" href="/assets/css/main.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -38,6 +39,7 @@
 							target="_blank"><span class="label">Snapchat</span></a></li>
 						<li><a href="#" class="icon fa-medium" target="_blank"><span
 								class="label">Medium</span></a></li>
+						<li><a href="#popSignIn" id="hdSignUp"><span class="label">sign up</span></a></li>
 					</ul>
 				</header>
 
@@ -56,8 +58,9 @@
 								과정들을 거쳐 그곳에 안착했을지 여럿 상상을 해봅니다.<br>그렇게 기약없는 휴먼기간을 거쳐 싹을 틔울 조건이
 								갖추어졌을 때,<br>씨앗은 껍질을 깨고 발아합니다.<br> <a href="/main.do">w4springrain.me</a>
 								또한 그런 과정을 거쳐 싹을 틔웠습니다.<br>삶의 경험을 비춰 보면 출발점 대부분은 최적의 조건이 아니였던 것
-								같습니다. 그리고 싹을 틔운 순간 변화시킬 수 없을 것 같은 이 외부요인에 순응이 아닌 적응을 해나가고자 합니다.
-								연약하지 않은 우리는 그렇게 <strong>봄비를 기다립니다.</strong>
+								같습니다. 싹을 틔운 순간 변화시킬 수 없을 것 같은 이 외부요인에 순응이 아닌 적응을 해나가고자 합니다. 연약하지
+								않은 우리는 그렇게
+								<strong>봄비를 기다립니다.</strong>
 							</p>
 						</div>
 						<div class="6u$ 12u$(small)">
@@ -99,6 +102,7 @@
 					</header>
 					<ul>
 						<li><a href="/main.do">ABOUT</a></li>
+						<li><a href="/main.do">Q & A</a></li>
 						<!-- <li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
 						<li><span class="opener">Submenu</span>
@@ -141,8 +145,8 @@
 				<footer id="footer">
 					<p class="copyright">
 						&copy; w4springrain. All rights reserved.<br> Demo Images: <a
-							href="https://unsplash.com">Unsplash</a>.<br> Design: <a
-							href="https://html5up.net">HTML5 UP</a>.
+							href="https://unsplash.com" target="_blank">Unsplash</a>.<br> Design: <a
+							href="https://html5up.net" target="_blank">HTML5 UP</a>.
 					</p>
 				</footer>
 
@@ -155,6 +159,9 @@
 	<script src="/assets/js/jquery.min.js"></script>
 	<script src="/assets/js/skel.min.js"></script>
 	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/common.js"></script>
+	<script src="/js/main/index.js"></script>
+	<jsp:include page="popSignIn.jsp" flush="true"/>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="/assets/js/main.js"></script>
 
