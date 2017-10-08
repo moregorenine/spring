@@ -33,12 +33,14 @@
 					<ul class="icons">
 						<li><a href="https://twitter.com/w4springrain"
 							class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="http://www.facebook.com/w4springrain"
+							class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
 						<li><a href="https://www.instagram.com/w4springrain/?hl=ko"
 							class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-snapchat-ghost"
+						<!-- <li><a href="#" class="icon fa-snapchat-ghost"
 							target="_blank"><span class="label">Snapchat</span></a></li>
 						<li><a href="#" class="icon fa-medium" target="_blank"><span
-								class="label">Medium</span></a></li>
+								class="label">Medium</span></a></li> -->
 						<li><a href="#popSignIn" id="hdSignUp"><span class="label">sign up</span></a></li>
 					</ul>
 				</header>
