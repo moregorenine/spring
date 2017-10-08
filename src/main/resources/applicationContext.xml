@@ -10,11 +10,18 @@
 	<!-- context loader listener에게 scan 되기 위해 -->
 	<context:annotation-config />
 	
-	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"
-		p:driverClassName="${database.driverClassName}"
-		p:url="${database.url}"
-		p:username="${database.username}"
-		p:password="${database.password}"
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"
+		p:driverClassName="${h2DB.driverClassName}"
+		p:url="${h2DB.url}"
+		p:username="${h2DB.username}"
+		p:password="${h2DB.password}"
+	/> -->
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		p:driverClassName="${mariaDB.driverClassName}"
+		p:url="${mariaDB.url}"
+		p:username="${mariaDB.username}"
+		p:password="${mariaDB.password}"
 	/>
 	
 	<bean id="mainController" class="me.w4springrain.controller.main.MainController"/>
