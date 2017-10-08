@@ -29,7 +29,7 @@
 
 				<!-- Header -->
 				<header id="header">
-					<a href="/main.do" class="logo"><strong>wait for spring rain</strong>  by HTML5 UP</a>
+					<a href="/main" class="logo"><strong>wait for spring rain</strong>  by HTML5 UP</a>
 					<ul class="icons">
 						<li><a href="https://twitter.com/w4springrain"
 							class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
@@ -58,7 +58,7 @@
 									봄비를 기다립니다.</strong><br>단단하고 울통한 진갈색 껍질의 씨앗은 어디서 왔을까요?<br> 바람에
 								흩날렸을지, 빗물에 휩쓸렸을지, 야생동물의 털에 옮겨졌을지, 새의 소화기관을 거쳐 배설되었을지 아니면 이런 복수의
 								과정들을 거쳐 그곳에 안착했을지 여럿 상상을 해봅니다.<br>그렇게 기약없는 휴먼기간을 거쳐 싹을 틔울 조건이
-								갖추어졌을 때,<br>씨앗은 껍질을 깨고 발아합니다.<br> <a href="/main.do">w4springrain.me</a>
+								갖추어졌을 때,<br>씨앗은 껍질을 깨고 발아합니다.<br> <a href="/main">w4springrain.me</a>
 								또한 그런 과정을 거쳐 싹을 틔웠습니다.<br>삶의 경험을 비춰 보면 출발점 대부분은 최적의 조건이 아니였던 것
 								같습니다. 싹을 틔운 순간 변화시킬 수 없을 것 같은 이 외부요인에 순응이 아닌 적응을 해나가고자 합니다. 연약하지
 								않은 우리는 그렇게
@@ -103,8 +103,8 @@
 						<h2>Menu</h2>
 					</header>
 					<ul>
-						<li><a href="/main.do">ABOUT</a></li>
-						<li><a href="/main.do">Q & A</a></li>
+						<li><a href="/main">ABOUT</a></li>
+						<li><a href="/main">Q & A</a></li>
 						<!-- <li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
 						<li><span class="opener">Submenu</span>
