@@ -12,7 +12,7 @@
 	<!-- maria DB -->
 	<entry key="mariaDB.driverClassName">org.mariadb.jdbc.Driver</entry>
 	<entry key="mariaDB.url">jdbc:mariadb://localhost:3306/w4springrain</entry>
-	<entry key="mariaDB.username">root</entry>
-	<entry key="mariaDB.password">gkswlstjr81</entry>
+	<entry key="mariaDB.username">w4springrain</entry>
+	<entry key="mariaDB.password">gkswlstjr81!</entry>
 	
 </properties>
