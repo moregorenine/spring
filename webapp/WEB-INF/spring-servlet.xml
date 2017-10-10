@@ -28,7 +28,13 @@
 	<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
 	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
 	<mvc:resources mapping="/jsp/**" location="/WEB-INF/jsp/" />
-
+	
+	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"></mvc:resources>
+	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"></mvc:resources>
+	<mvc:default-servlet-handler />
+	<!-- <context:component-scan base-package="com.hi.cdi.v1.controller" />
+	<context:component-scan base-package="com.hi.cdi.hm.controller" /> -->
+	
 	<bean id="jspViewResolver"
 	class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 	p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />

@@ -1,26 +1,35 @@
 package me.w4springrain.domain.user;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class User {
-	private String userId;
+	private Integer userId;
+	@NotNull @Min(2) @Max(16)
 	private String password;
-	private String name;
+	@NotNull @Email
 	private String email;
 
 	public User() {
 	}
 
-	public User(String userId, String password, String name, String email) {
+	public User(Integer userId) {
+		this.setUserId(userId);
+	}
+
+	public User(Integer userId, String password, String email) {
 		this.setUserId(userId);
 		this.setPassword(password);
-		this.setName(name);
 		this.setEmail(email);
 	}
 
-	public String getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
@@ -32,20 +41,17 @@ public class User {
 		this.password = password;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + "]";
 	}
 
 }

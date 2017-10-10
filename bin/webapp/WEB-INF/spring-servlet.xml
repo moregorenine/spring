@@ -9,7 +9,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<!-- controller로 인식할 영역 지정 -->
-	<context:component-scan base-package="me.springrain">
+	<context:component-scan base-package="me.w4springrain">
 		<!-- <context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" /> -->
 	</context:component-scan>
@@ -26,7 +26,14 @@
 	<mvc:resources mapping="/assets/**" location="/assets/" />
 	<mvc:resources mapping="/images/**" location="/images/" />
 	<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
+	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
+	<mvc:resources mapping="/jsp/**" location="/WEB-INF/jsp/" />
+	
+	<bean id="swagger2Config" class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration"></bean>
+	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"></mvc:resources>
+	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"></mvc:resources>
 
+	
 	<bean id="jspViewResolver"
 	class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 	p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />

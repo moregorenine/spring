@@ -3,8 +3,9 @@ $('#hdSignUp').click(function() {
 	layer_popup($href);
 });
 
-$('#btnSignUp').click(function() {
-});
+function cbSignUp() {
+	alert("end");
+}
 
 function layer_popup(el) {
 
@@ -29,6 +30,17 @@ function layer_popup(el) {
 			left : 0
 		});
 	}
+	
+	$('#btnSignUp').click(function() {
+		var data = {};
+		data.password = "test2";
+		data.email = "test4";
+		var params = $.extend({}, doAjax_params_default);
+		params['url'] = "/user/create";
+		params['data'] = data;
+		params['successCallbackFunction'] = cbSignUp;
+		doAjax(params);
+	});
 
 	$('#btnClose').click(function() {
 		isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가

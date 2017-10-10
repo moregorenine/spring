@@ -23,12 +23,28 @@ public class UserDao extends JdbcDaoSupport {
 	 * @param userId
 	 * @return
 	 */
-	public User findById(String userId) {
-		String sql = "select * from W4_USER where userId = ?";
+	public User findId() {
+		String sql = "select last_insert_id() as user_id";
 		RowMapper<User> rowMapper = new RowMapper<User>() {
 			@Override
 			public User mapRow(ResultSet arg0, int arg1) throws SQLException {
-				return new User(arg0.getString("userId"), arg0.getString("password"), arg0.getString("name"), arg0.getString("email"));
+				return new User(arg0.getInt("user_id"));
+			}
+		};
+		return getJdbcTemplate().queryForObject(sql, rowMapper);
+	}
+	
+	/**
+	 * W4_USER 조회
+	 * @param userId
+	 * @return
+	 */
+	public User findById(Integer userId) {
+		String sql = "select * from W4_USER where user_id = ?";
+		RowMapper<User> rowMapper = new RowMapper<User>() {
+			@Override
+			public User mapRow(ResultSet arg0, int arg1) throws SQLException {
+				return new User(arg0.getInt("user_id"), arg0.getString("password"), arg0.getString("email"));
 			}
 		};
 		return getJdbcTemplate().queryForObject(sql, rowMapper, userId);
@@ -40,7 +56,7 @@ public class UserDao extends JdbcDaoSupport {
 	 * @return
 	 */
 	public int create(User user) {
-		String sql = "insert into W4_USER values(?, ?, ?, ?)";
-		return getJdbcTemplate().update(sql, user.getUserId(), user.getPassword(), user.getName(), user.getEmail());
+		String sql = "insert into W4_USER (password, email) values(?, ?)";
+		return getJdbcTemplate().update(sql, user.getPassword(), user.getEmail());
 	}
 }

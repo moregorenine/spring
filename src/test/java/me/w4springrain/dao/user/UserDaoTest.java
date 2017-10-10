@@ -26,25 +26,24 @@ public class UserDaoTest {
 	@Test
 	public void findById() {
 		User user = new User(); 
-		user.setUserId("userId");
 		user.setPassword("password");
-		user.setName("name");
 		user.setEmail("email");
 		userDao.create(user);
 		assertNotNull(user);
-		user = userDao.findById("userId");
-		assertThat(user.getUserId(), is("userId"));
-		assertNotNull(user.getUserId());
-		assertNotNull(user.getPassword());
-		assertNotNull(user.getName());
-		assertNotNull(user.getEmail());
+		User insertedUser = userDao.findId();
+		user.setUserId(insertedUser.getUserId());
+		User dbUser = userDao.findById(user.getUserId());
+		assertThat(user.getUserId(), is(dbUser.getUserId()));
+		assertThat(user.getPassword(), is(dbUser.getPassword()));
+		assertThat(user.getEmail(), is(dbUser.getEmail()));
 	}
 	
 	@Test
 	public void createUser() {
-		User user = new User("userId", "password", "test user name", "test@testmail");
+		User user = new User(null, "password", "test@testmail");
 		int cntCreate = userDao.create(user);
 		assertThat(cntCreate, is(1));
+		user = userDao.findId();
 		User dbUser = userDao.findById(user.getUserId());
 		assertThat(dbUser.getUserId(), is(user.getUserId()));
 	}

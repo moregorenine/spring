@@ -6,6 +6,11 @@
 	<!-- <version>0.0.1-SNAPSHOT</version> -->
 	<version>0.0.1</version>
 	<packaging>war</packaging>
+	
+	<properties>
+		<org.springframework.version>4.3.11.RELEASE</org.springframework.version>
+		<io.springfox.swagger.version>2.6.1</io.springfox.swagger.version>
+	</properties>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
@@ -13,7 +18,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.3.11.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 	
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
@@ -30,7 +35,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.3.11.RELEASE</version>
+			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -65,7 +70,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.3.11.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
@@ -74,6 +79,27 @@
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
 			<version>2.1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.2.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${io.springfox.swagger.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${io.springfox.swagger.version}</version>
 		</dependency>
 		
 	</dependencies>

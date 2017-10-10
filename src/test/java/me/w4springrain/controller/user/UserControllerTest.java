@@ -21,7 +21,7 @@ public class UserControllerTest {
 	
 	@Test
 	public void testCreate() {
-		User user = new User("userId", "password", "name", "email");
+		User user = new User(null, "password", "email");
 		userController.create(user);	
 	}
 

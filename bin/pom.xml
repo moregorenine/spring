@@ -6,16 +6,23 @@
 	<!-- <version>0.0.1-SNAPSHOT</version> -->
 	<version>0.0.1</version>
 	<packaging>war</packaging>
+	
+	<properties>
+		<org.springframework.version>4.3.11.RELEASE</org.springframework.version>
+		<io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
+	</properties>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<!-- spring mvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.3.11.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 	
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<!-- spring log -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
@@ -24,14 +31,16 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<!-- spring SpringJUnit4ClassRunner -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.3.11.RELEASE</version>
+			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<!-- @RunWith -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -40,11 +49,64 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<!-- spring db -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.196</version>
-			<scope>test</scope>
+			<!-- <scope>test</scope> -->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+		<!-- spring db connection pool -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<!-- spring jdbc 생성 tool -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<!-- maria db -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.2.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${io.springfox.swagger.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${io.springfox.swagger.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.fasterxml/classmate -->
+		<dependency>
+		    <groupId>com.fasterxml</groupId>
+		    <artifactId>classmate</artifactId>
+		    <version>1.3.4</version>
 		</dependency>
 		
 	</dependencies>
@@ -55,6 +117,7 @@
 		<plugins>
 
 			<plugin>
+				<!-- maven compiler -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.7.0</version>
@@ -66,6 +129,7 @@
 			</plugin>
 
 			<plugin>
+				<!-- root path 설정 -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.10</version>
@@ -76,6 +140,7 @@
 			</plugin>
 
 			<plugin>
+				<!-- war, webapp 생성 -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.1.0</version>

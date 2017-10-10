@@ -1,12 +1,7 @@
 DROP TABLE IF EXISTS W4_USER;
 
 CREATE TABLE W4_USER (
-	userId		varchar(12) not null,
+	user_id		int not null AUTO_INCREMENT PRIMARY KEY,
 	password	varchar(12)	not null,
-	name		varchar(20)	not null,
-	email		varchar(50),
-	
-	PRIMARY KEY(userId)
+	email		varchar(50)
 );
-
-INSERT INTO W4_USER VALUES('admin', 'gkswlstjr81', 'admin', 'w4springrain@gmail.com');
