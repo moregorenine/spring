@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
@@ -28,12 +29,12 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 		p:dataSource-ref="dataSource"
 	/>
-		<!-- <property name="dataSource-ref" value="dataSource"></property> -->
 	
 	<tx:annotation-driven/>
 	
 	<bean id="mainController" class="me.w4springrain.controller.main.MainController"/>
 	<bean id="userController" class="me.w4springrain.controller.user.UserController"/>
 	<bean id="userDao" class="me.w4springrain.dao.user.UserDao" p:dataSource-ref="dataSource"/>
+	<bean id="user" class="me.w4springrain.domain.user.User"/>
 	
 </beans>
