@@ -32,9 +32,6 @@
 	
 	<tx:annotation-driven/>
 	
-	<bean id="mainController" class="me.w4springrain.controller.main.MainController"/>
-	<bean id="userController" class="me.w4springrain.controller.user.UserController"/>
-	<bean id="userDao" class="me.w4springrain.dao.user.UserDao" p:dataSource-ref="dataSource"/>
-	<bean id="user" class="me.w4springrain.domain.user.User"/>
+	<bean id="mainController" class="me.w4springrain.main.controller.MainController"/>
 	
 </beans>
