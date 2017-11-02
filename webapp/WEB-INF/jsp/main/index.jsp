@@ -104,7 +104,7 @@
 					</header>
 					<ul>
 						<li><a href="/main">ABOUT</a></li>
-						<li><a href="/main">Q & A</a></li>
+						<li><a href="/main">Q &amp; A</a></li>
 						<li><a href="http://localhost:8282/swagger-ui.html" target="blank">swagger-ui</a></li>
 						<!-- <li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
