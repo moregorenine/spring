@@ -11,82 +11,20 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/zTree_v3/js/jquery.ztree.core.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/zTree_v3/js/jquery.ztree.excheck.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/zTree_v3/js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/common/common.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/ztree/ztrees.js"></script>
 <SCRIPT type="text/javascript">
-	<!--
-	var setting = {
-		edit: {
-			enable: true
-		},
-		data: {
-			simpleData: {
-				enable: true
-			}
-		},
-		callback: {
-			beforeDrag: beforeDrag
-		}
-	};
-
-	var zNodes =[
-		{ id:1, pId:0, name:"parent node 1", open:true},
-		{ id:11, pId:1, name:"leaf node 1-1"},
-		{ id:12, pId:1, name:"leaf node 1-2"},
-		{ id:13, pId:1, name:"leaf node 1-3"},
-		{ id:2, pId:0, name:"parent node 2", open:true},
-		{ id:21, pId:2, name:"leaf node 2-1"},
-		{ id:22, pId:2, name:"leaf node 2-2"},
-		{ id:23, pId:2, name:"leaf node 2-3"},
-		{ id:3, pId:0, name:"parent node 3", open:true },
-		{ id:31, pId:3, name:"leaf node 3-1"},
-		{ id:32, pId:3, name:"leaf node 3-2"},
-		{ id:33, pId:3, name:"leaf node 3-3"}
-	];
-
-	function beforeDrag(treeId, treeNodes) {
-		return false;
-	}
-	
-	function setEdit() {
-		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
-		remove = $("#remove").attr("checked"),
-		rename = $("#rename").attr("checked"),
-		removeTitle = $.trim($("#removeTitle").get(0).value),
-		renameTitle = $.trim($("#renameTitle").get(0).value);
-		zTree.setting.edit.showRemoveBtn = remove;
-		zTree.setting.edit.showRenameBtn = rename;
-		zTree.setting.edit.removeTitle = removeTitle;
-		zTree.setting.edit.renameTitle = renameTitle;
-		showCode(['setting.edit.showRemoveBtn = ' + remove, 'setting.edit.showRenameBtn = ' + rename,
-			'setting.edit.removeTitle = "' + removeTitle +'"', 'setting.edit.renameTitle = "' + renameTitle + '"']);
-	}
-	function showCode(str) {
-		var code = $("#code");
-		code.empty();
-		for (var i=0, l=str.length; i<l; i++) {
-			code.append("<li>"+str[i]+"</li>");
-		}
-	}
-	
-	$(document).ready(function(){
-		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
-		setEdit();
-		$("#remove").bind("change", setEdit);
-		$("#rename").bind("change", setEdit);
-		$("#removeTitle").bind("propertychange", setEdit)
-		.bind("input", setEdit);
-		$("#renameTitle").bind("propertychange", setEdit)
-		.bind("input", setEdit);
-	});
-	//-->
+	var zNodes = "${ztrees}";
 </SCRIPT>
 </head>
 <body>
 <h1>Tree Structure zTree</h1>
 <h6>[ 메뉴 정보 예제 ]</h6>
 <!-- <div id="out"> -->
+	<form method="post" action="menus">
 	<div class="content_wrap" style="margin: 0 auto;">
 		<div class="zTreeDemoBackground left">
-			<ul id="treeDemo" class="ztree"></ul>
+			<ul id="demoZTree" class="ztree"></ul>
 		</div>
 		<div class="right">
 			<ul class="info">
@@ -145,6 +83,17 @@
 			<input type="submit" value="submit" id="btnSubmit" />
 		</div>
 	</div>
+	</form>
 <!-- </div> -->
+	<!-- ztree 우클릭 메뉴 -->
+	<div id="rMenu">
+		<ul>
+			<li id="m_add" onclick="addTreeNode();">Add Node</li>
+			<li id="m_del" onclick="removeTreeNode();">Delete Node</li>
+			<!-- <li id="m_check" onclick="checkTreeNode(true);">Check Node</li> -->
+			<!-- <li id="m_unCheck" onclick="checkTreeNode(false);">Uncheck Node</li> -->
+			<li id="m_reset" onclick="resetTree();">Resume zTree</li>
+		</ul>
+	</div>
 </body>
 </html>
