@@ -30,6 +30,21 @@ $(document).ready(function() {
 		zTree.selectNode(zTree.getNodes()[0]);
 		onClick(null, null, zTree.getNodes()[0]);
 	}
+	
+	$("#menuNm").keyup(function() {
+		zTree.getSelectedNodes()[0].name = $("#menuNm").val();
+		zTree.updateNode(zTree.getSelectedNodes()[0]);
+	});
+	
+	$("#url").keyup(function() {
+		zTree.getSelectedNodes()[0].url = $("#url").val();
+		zTree.updateNode(zTree.getSelectedNodes()[0]);
+	});
+	
+	$("#useYn").change(function() {
+		zTree.getSelectedNodes()[0].useYn = $("#useYn").val();
+		zTree.updateNode(zTree.getSelectedNodes()[0]);
+	});
 });
 
 var _zTrees = {
@@ -149,18 +164,18 @@ function onBodyMouseDown(event){
  */
 function onClick(event, treeId, treeNode) {
     if(treeNode.id !== undefined) {
-    	parent.$("#menuId").val(treeNode.id);
+    	$("#menuId").val(treeNode.id);
     } else {
-    	parent.$("#menuId").val("");
+    	$("#menuId").val("");
     	treeNode.useYn = "N"
     }
-    parent.$("#menuNm").val(treeNode.name);
-    parent.$("#url").val(treeNode.url);
-    parent.$("#useYn").val(treeNode.useYn);
+    $("#menuNm").val(treeNode.name);
+    $("#url").val(treeNode.url);
+    $("#useYn").val(treeNode.useYn);
 };
 
 function onRename(event, treeId, treeNode, isCancel) {
-	parent.$("#menuNm").val(treeNode.name);
+	$("#menuNm").val(treeNode.name);
 }
 
 /**
