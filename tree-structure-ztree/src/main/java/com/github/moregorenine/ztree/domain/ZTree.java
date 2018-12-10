@@ -1,8 +1,15 @@
 package com.github.moregorenine.ztree.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -12,7 +19,7 @@ public class ZTree {
 	private Long id; // 본인 id
 	private String pId; // 부모 id
 	private String tId; // Ztree 내장 id
-	private String parentTId; // Ztree 내장 pId
+//	private String parentTId; // Ztree 내장 pId
 	private Long grp; // grp : 같은 주제를 갖는 게시물의 고유번호. 부모글과 부모글로부터 파생된 모든 자식글은 같은 번호를 갖는다.
 	private Long seq; // seq : 같은 그룹내 게시물의 순서
 	private Long level; // lvl : 같은 그룹내 계층
@@ -22,6 +29,11 @@ public class ZTree {
 	@NotBlank(message = "URL을 작성해주세요.")
 	private String url; // 메뉴에 연결할 url
 	private String useYn; // 메뉴 사용여부
+	@ManyToOne(cascade={CascadeType.ALL})
+	@JoinColumn(name="parentTId")
+	private ZTree parent;
+	@OneToMany(mappedBy="parent", cascade={CascadeType.ALL})
+	private Set<ZTree> children = new HashSet<ZTree>();
 
 	public Long getId() {
 		return id;
@@ -47,13 +59,13 @@ public class ZTree {
 		this.tId = tId;
 	}
 
-	public String getParentTId() {
-		return parentTId;
-	}
-
-	public void setParentTId(String parentTId) {
-		this.parentTId = parentTId;
-	}
+//	public String getParentTId() {
+//		return parentTId;
+//	}
+//
+//	public void setParentTId(String parentTId) {
+//		this.parentTId = parentTId;
+//	}
 
 	public Long getGrp() {
 		return grp;
@@ -111,4 +123,20 @@ public class ZTree {
 		this.useYn = useYn;
 	}
 
+	public ZTree getParent() {
+		return parent;
+	}
+
+	public void setParent(ZTree parent) {
+		this.parent = parent;
+	}
+
+	public Set<ZTree> getChildren() {
+		return children;
+	}
+
+	public void setChildren(Set<ZTree> children) {
+		this.children = children;
+	}
+	
 }

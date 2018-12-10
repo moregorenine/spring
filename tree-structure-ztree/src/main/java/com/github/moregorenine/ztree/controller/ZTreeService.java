@@ -26,9 +26,10 @@ public class ZTreeService {
 
 	public void addZTrees(@Valid ZTreeWrapper zTreeWrapper) {
 		this.deleteZTrees();
-		for(ZTree ztree : zTreeWrapper.getzTrees()) {
-			zTreeRepository.save(ztree);
-		}
+		zTreeRepository.saveAll(zTreeWrapper.getzTrees());
+//		for(ZTree ztree : zTreeWrapper.getzTrees()) {
+//			zTreeRepository.save(ztree);
+//		}
 	}
 
 	public void deleteZTrees() {
