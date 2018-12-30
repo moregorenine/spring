@@ -18,27 +18,45 @@ public class ZTreeService {
 	@Autowired
 	private ZTreeRepository zTreeRepository;
 
+	/**
+	 * zTrees 조회
+	 * 
+	 * @return
+	 */
 	public List<ZTree> getAllZTrees() {
 		List<ZTree> zTrees = new ArrayList<>();
-		zTrees = zTreeRepository.findAllByOrderByTId();
+		zTrees = zTreeRepository.findAllByOrderById();
+		// pId 세팅
+//		for (ZTree zTree : zTrees) {
+//			if(zTree.getpId() == null) {
+//				zTree.setpId(0l);
+//			}
+//		}
 		return zTrees;
 	}
 
+	/**
+	 * zTrees All delete & All insert
+	 * 
+	 * @param zTreeWrapper
+	 */
 	public void addZTrees(@Valid ZTreeWrapper zTreeWrapper) {
 		this.deleteZTrees();
-		for(ZTree zTree : zTreeWrapper.getzTrees()) {
+		for (ZTree zTree : zTreeWrapper.getzTrees()) {
 			this.loopSetZTreeParent(zTree);
-		}		
+		}
 		zTreeRepository.saveAll(zTreeWrapper.getzTrees());
 	}
-	
+
 	/**
 	 * zTreeWrapper의 parent 세팅하기 위한 재귀호출 함수
+	 * 
 	 * @param zTreeWrapper
 	 */
 	private void loopSetZTreeParent(ZTree zTree) {
-		if(zTree.getChildren()!=null) {
-			for(ZTree childZTree : zTree.getChildren()) {
+		if (!zTree.getChildren().isEmpty()) {
+			// 자식이 존재할 경우 자식노드의 부모id 세팅
+			for (ZTree childZTree : zTree.getChildren()) {
 				childZTree.setParent(zTree);
 				this.loopSetZTreeParent(childZTree);
 			}

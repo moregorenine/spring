@@ -17,8 +17,7 @@ $(document).ready(function() {
 		params['errorCallBackFunction'] = _zTrees.submitError;
 		doAjax(params);
 	});
-	
-	$.fn.zTree.init($("#demoZTree"), setting, zNodes);
+	$.fn.zTree.init($("#demoZTree"), setting, jsonZTrees);
 	zTree = $.fn.zTree.getZTreeObj("demoZTree");
 	//우클릭 Event
 	rMenu = $("#rMenu");
@@ -220,7 +219,7 @@ function removeTreeNode() {
  */
 function resetTree() {
 	hideRMenu();
-	$.fn.zTree.init($("#demoZTree"), setting, zNodes);
+	$.fn.zTree.init($("#demoZTree"), setting, jsonZTrees);
 }
 
 /**

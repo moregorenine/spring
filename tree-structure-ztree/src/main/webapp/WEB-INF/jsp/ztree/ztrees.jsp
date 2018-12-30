@@ -14,7 +14,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/common/common.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/ztree/ztrees.js"></script>
 <SCRIPT type="text/javascript">
-	var zNodes = "${ztrees}";
+	var jsonZTrees = ${jsonZTrees};
 </SCRIPT>
 </head>
 <body>

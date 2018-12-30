@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.moregorenine.ztree.domain.ZTree;
 import com.github.moregorenine.ztree.domain.ZTreeWrapper;
 
@@ -27,7 +29,16 @@ public class ZTreeController {
 	@RequestMapping("/ztrees")
 	public ModelAndView getAllZTrees(Model model) {
 		List<ZTree> ztrees = zTreeService.getAllZTrees();
-		model.addAttribute(ztrees);
+//		json data로 형변환
+		String jsonZTrees = "";
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			jsonZTrees = mapper.writeValueAsString(ztrees);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+//		객체담기
+		model.addAttribute("jsonZTrees", jsonZTrees);
 		return new ModelAndView("ztree/ztrees");
 	}
 	
