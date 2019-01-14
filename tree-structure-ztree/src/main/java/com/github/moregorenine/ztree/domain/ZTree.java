@@ -12,15 +12,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.data.annotation.Transient;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class ZTree {
 	@Id
 	@GeneratedValue
 	private Long id; // 본인 id
 	private String tId; // Ztree 내장 id : 본인 id
-	// @Transient
+	@Transient
+	private Long pId; // Ztree 내장 id : 부모 id
 	// private String parentTId; // Ztree 내장 pId
-//	private Long pId; // Ztree 내장 id : 부모 id
 	int level; // lvl : 같은 그룹내 계층
 	@NotBlank(message = "Name을 작성해주세요.")
 	private String name;
@@ -29,9 +34,11 @@ public class ZTree {
 	private String url; // 메뉴에 연결할 url
 	private String useYn; // 메뉴 사용여부
 	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "pId")
+	@JoinColumn(name = "parentId")
+	@JsonBackReference
 	private ZTree parent;
 	@OneToMany(mappedBy = "parent", cascade = { CascadeType.ALL })
+	@JsonManagedReference	
 	private Set<ZTree> children = new HashSet<ZTree>();
 
 	public Long getId() {
@@ -48,6 +55,14 @@ public class ZTree {
 
 	public void settId(String tId) {
 		this.tId = tId;
+	}
+
+	public Long getpId() {
+		return pId;
+	}
+
+	public void setpId(Long pId) {
+		this.pId = pId;
 	}
 
 	public int getLevel() {

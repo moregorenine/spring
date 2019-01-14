@@ -29,7 +29,6 @@ public class ZTreeController {
 	@RequestMapping("/ztrees")
 	public ModelAndView getAllZTrees(Model model) {
 		List<ZTree> ztrees = zTreeService.getAllZTrees();
-//		json data로 형변환
 		String jsonZTrees = "";
 		ObjectMapper mapper = new ObjectMapper();
 		try {
